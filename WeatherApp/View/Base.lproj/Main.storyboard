@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Aq6-uw-8H7" userLabel="ivBackground">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z93-2l-TMZ" userLabel="svContainer">
+                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EVs-El-myx" userLabel="svHeader">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xw-nZ-adv">
+                                                <rect key="frame" x="0.0" y="1" width="50" height="48.666666666666671"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Etk-4R-vRU"/>
+                                                    <constraint firstAttribute="width" constant="50" id="Ohq-TO-Juh"/>
+                                                </constraints>
+                                                <color key="tintColor" name="myWeatherColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" backgroundImage="location.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="currentLocationClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZFV-Jd-Ybq"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Location" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xgr-hp-5uU" userLabel="Search Text Field">
+                                                <rect key="frame" x="54" y="0.0" width="253" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djp-tv-5Bo">
+                                                <rect key="frame" x="311" y="0.99999999999999645" width="50" height="48.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="pC2-HI-N36"/>
+                                                    <constraint firstAttribute="height" constant="50" id="qhF-SU-auz"/>
+                                                </constraints>
+                                                <color key="tintColor" name="myWeatherColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
+                                                <connections>
+                                                    <action selector="searchByLocationNameClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4pX-8b-PZH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5fx-ii-agS" userLabel="Cloud Image">
+                                        <rect key="frame" x="241" y="62.666666666666657" width="120" height="115"/>
+                                        <color key="tintColor" name="myWeatherColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="40s-Oz-rZf"/>
+                                            <constraint firstAttribute="width" constant="120" id="OlN-PA-QZt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRA-hJ-11N">
+                                        <rect key="frame" x="163.33333333333337" y="190" width="197.66666666666663" height="120"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm0-6c-n0s" userLabel="Temperature">
+                                                <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="120"/>
+                                                <color key="tintColor" name="myWeatherColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="80"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTh-Cg-vJZ" userLabel="Degree">
+                                                <rect key="frame" x="92.666666666666657" y="0.0" width="38" height="120"/>
+                                                <color key="tintColor" name="myWeatherColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="100"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5S-Ow-5VT" userLabel="Celcius">
+                                                <rect key="frame" x="130.66666666666666" y="0.0" width="67" height="120"/>
+                                                <color key="tintColor" name="myWeatherColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="100"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="beM-M4-qSj"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangalore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGB-NR-Pza" userLabel="City Name">
+                                        <rect key="frame" x="258.66666666666669" y="320" width="102.33333333333331" height="28.666666666666686"/>
+                                        <color key="tintColor" name="myWeatherColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naN-3E-fUq">
+                                        <rect key="frame" x="18" y="358.66666666666674" width="343" height="400.33333333333326"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EVs-El-myx" secondAttribute="trailing" id="Pzb-kU-Ghy"/>
+                                    <constraint firstItem="EVs-El-myx" firstAttribute="leading" secondItem="z93-2l-TMZ" secondAttribute="leading" id="gDO-PT-Pl2"/>
+                                    <constraint firstItem="EVs-El-myx" firstAttribute="top" secondItem="z93-2l-TMZ" secondAttribute="top" id="oel-Eb-fNL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="z93-2l-TMZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="16g-qj-PQE"/>
+                            <constraint firstItem="Aq6-uw-8H7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="23C-ds-Aub"/>
+                            <constraint firstItem="z93-2l-TMZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Eza-7w-C3o"/>
+                            <constraint firstAttribute="bottom" secondItem="Aq6-uw-8H7" secondAttribute="bottom" id="Fsg-XP-NrA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z93-2l-TMZ" secondAttribute="bottom" id="LAL-7Q-MSk"/>
+                            <constraint firstAttribute="trailing" secondItem="Aq6-uw-8H7" secondAttribute="trailing" id="am1-wm-ecu"/>
+                            <constraint firstItem="Aq6-uw-8H7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pjv-sa-NOe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z93-2l-TMZ" secondAttribute="trailing" constant="16" id="zs6-n6-pyH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnCurrentLocation" destination="4Xw-nZ-adv" id="ekp-H0-Qeh"/>
+                        <outlet property="btnSearchByLocation" destination="djp-tv-5Bo" id="dsY-LJ-2Ei"/>
+                        <outlet property="imageCloud" destination="5fx-ii-agS" id="iXg-99-GOA"/>
+                        <outlet property="labelCityName" destination="QGB-NR-Pza" id="jkL-yR-5V8"/>
+                        <outlet property="labelTemperature" destination="Xm0-6c-n0s" id="9rs-lo-BuD"/>
+                        <outlet property="textFieldSearch" destination="xgr-hp-5uU" id="NXd-dm-4U5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="662" height="662"/>
+        <image name="cloud" catalog="system" width="128" height="87"/>
+        <image name="location.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <namedColor name="myWeatherColor">
+            <color red="0.11800000071525574" green="0.20800000429153442" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
